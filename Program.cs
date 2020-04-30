@@ -13,8 +13,8 @@ namespace Chapter10Exercise
             try
             {
                 char[,] ticTacToe = new char[3, 3] { { '-', '-', '-'},
-                                                 { '-', '-', '-'},
-                                                 { '-', '-', '-'} };
+                                                     { '-', '-', '-'},
+                                                     { '-', '-', '-'} };
 
 
 
@@ -30,257 +30,34 @@ namespace Chapter10Exercise
                     int p1row = int.Parse(Console.ReadLine());
                     Console.WriteLine("Player one choose your column");
                     int p1column = int.Parse(Console.ReadLine());
-                    if (p1row == 0 || p1column == 0)
-                    {
-                        if (ticTacToe[0, 0] == 'X' || ticTacToe[0, 0] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[0, 0] = 'X';
-                            PrintBoard(ticTacToe);
-                        }
 
-                    }
-                    else if (p1row == 0 || p1column == 1)
+                    if (ticTacToe[p1row, p1column] == 'X' || ticTacToe[p1row, p1column] == 'O')
                     {
-                        if (ticTacToe[0, 1] == 'X' || ticTacToe[0, 1] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[0, 1] = 'X';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p1row == 0 || p1column == 2)
-                    {
-                        if (ticTacToe[0, 2] == 'X' || ticTacToe[0, 2] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[0, 2] = 'X';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p1row == 1 || p1column == 0)
-                    {
-                        if (ticTacToe[1, 0] == 'X' || ticTacToe[1, 0] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[1, 0] = 'X';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p1row == 1 || p1column == 1)
-                    {
-                        if (ticTacToe[1, 1] == 'X' || ticTacToe[1, 1] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[1, 1] = 'X';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p1row == 1 || p1column == 2)
-                    {
-                        if (ticTacToe[1, 2] == 'X' || ticTacToe[1, 2] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[1, 2] = 'X';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p1row == 2 || p1column == 0)
-                    {
-                        if (ticTacToe[2, 0] == 'X' || ticTacToe[2, 0] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[2, 0] = 'X';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p1row == 2 || p1column == 1)
-                    {
-                        if (ticTacToe[2, 1] == 'X' || ticTacToe[2, 1] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[2, 1] = 'X';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p1row == 2 || p1column == 2)
-                    {
-                        if (ticTacToe[2, 2] == 'X' || ticTacToe[2, 2] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[2, 2] = 'X';
-                            PrintBoard(ticTacToe);
-                        }
+                        Console.WriteLine("That spot is already taken try again!");
+                        continue;
                     }
                     else
                     {
-                        Console.WriteLine("That is not a valid entry!");
-                        break;
+                        ticTacToe[p1row, p1column] = 'X';
+                        PrintBoard(ticTacToe);
                     }
 
-                    Console.WriteLine("Player one you are O choose your row");
+                    Console.WriteLine("Player two you are O choose your row");
                     int p2row = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Player one choose your column");
+                    Console.WriteLine("Player two choose your column");
                     int p2column = int.Parse(Console.ReadLine());
 
-                    if (p2row == 0 || p2column == 0)
+                    if (ticTacToe[p2row, p2column] == 'X' || ticTacToe[p2row, p2column] == 'O')
                     {
-                        if (ticTacToe[0, 0] == 'X' || ticTacToe[0, 0] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[0, 0] = 'O';
-                            PrintBoard(ticTacToe);
-                        }
-
+                        Console.WriteLine("That spot is already taken try again!");
+                        continue;
                     }
-                    else if (p2row == 0 || p2column == 1)
-                    {
-                        if (ticTacToe[0, 1] == 'X' || ticTacToe[0, 1] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[0, 1] = 'O';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p2row == 0 || p2column == 2)
-                    {
-                        if (ticTacToe[0, 2] == 'X' || ticTacToe[0, 2] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[0, 2] = 'O';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p2row == 1 || p2column == 0)
-                    {
-                        if (ticTacToe[1, 0] == 'X' || ticTacToe[1, 0] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[1, 0] = 'O';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p2row == 1 || p2column == 1)
-                    {
-                        if (ticTacToe[1, 1] == 'X' || ticTacToe[1, 1] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[1, 1] = 'O';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p2row == 1 || p2column == 2)
-                    {
-                        if (ticTacToe[1, 2] == 'X' || ticTacToe[1, 2] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[1, 2] = 'O';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p2row == 2 || p2column == 0)
-                    {
-                        if (ticTacToe[2, 0] == 'X' || ticTacToe[2, 0] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[2, 0] = 'O';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p2row == 2 || p2column == 1)
-                    {
-                        if (ticTacToe[2, 1] == 'X' || ticTacToe[2, 1] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[2, 1] = 'O';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
-                    else if (p2row == 2 || p2column == 2)
-                    {
-                        if (ticTacToe[2, 2] == 'X' || ticTacToe[2, 2] == 'O')
-                        {
-                            Console.WriteLine("That spot is already taken try again!");
-                        }
-                        else
-                        {
-                            ticTacToe[2, 2] = 'O';
-                            PrintBoard(ticTacToe);
-                        }
-                    }
-
                     else
                     {
-                        Console.WriteLine("That is not a valid entry");
-                        break;
+                        ticTacToe[p2row, p2column] = 'O';
+                        PrintBoard(ticTacToe);
                     }
                 }
-
             }
 
             catch (Exception e)
